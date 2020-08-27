@@ -1,13 +1,13 @@
 import React from 'react'
 
-import {Container, Row, Col, Image} from 'react-bootstrap'
+import { Container, Row, Col, Image } from 'react-bootstrap'
 
-const MainContent = ({ imgUrl, mainTxt, subTxt }) => {
+const MainContent = ({ data: { imgUrl, mainTxt, subTxt } }) => {
   return (
     <Container>
       <Row className="align-items-center">
         <Col sm={12} lg={6}>
-          <Image src={imgUrl} fluid/>
+          <Image src={imgUrl} fluid />
         </Col>
         <Col sm={12} lg={6}>
           <h3>{mainTxt}</h3>

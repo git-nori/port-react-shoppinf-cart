@@ -14,7 +14,7 @@ const HomePage = () => {
   return (
     <>
       <MainContent data={{...mainContent}} />
-      <SubContent imgUrl={subContent.imgUrl} mainTxt={subContent.mainTxt} subTxt={subContent.subTxt} />
+      <SubContent data={{...subContent}} />
     </>
   )
 }
