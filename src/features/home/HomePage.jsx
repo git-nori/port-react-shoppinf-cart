@@ -1,18 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { fetchHomeContents } from './homeSlice'
 
 import MainView from './MainView'
-
-const imgUrl = "url(static/img/noimg.png)"
-const data = {
-  mainview: {
-    imgUrl, mainTxt: "テキストオーバーレイ付き画像", subTxt: "オーバーレイテキストを使用して、お客様があなたのブランドについてよく理解できるようにします。あなたのスタイルやストーリーに関連する画像やテキストを選択してください。"
-  }
-}
+import MainContent from './MainContent'
 
 const HomePage = () => {
+  const dispatch = useDispatch()
+  const {mainContent, subContent, subContents, collections} = useSelector(state => state.home)
+  useEffect(() => {
+    dispatch(fetchHomeContents(0))
+  }, [])
   return (
     <>
-    <MainView imgUrl={data.mainview.imgUrl} mainTxt={data.mainview.mainTxt} subTxt={data.mainview.subTxt} />
+      <MainView imgUrl={mainContent.imgUrl} mainTxt={mainContent.mainTxt} subTxt={mainContent.subTxt} />
+      <MainContent imgUrl={subContent.imgUrl} mainTxt={subContent.mainTxt} subTxt={subContent.subTxt} />
     </>
   )
 }
