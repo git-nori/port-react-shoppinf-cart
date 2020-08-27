@@ -4,6 +4,7 @@ import { fetchHomeContents } from './homeSlice'
 
 import MainContent from './MainContent'
 import SubContent from './SubContent'
+import SubContents from './SubContents'
 
 const HomePage = () => {
   const dispatch = useDispatch()
@@ -15,6 +16,7 @@ const HomePage = () => {
     <>
       <MainContent data={{...mainContent}} />
       <SubContent data={{...subContent}} />
+      <SubContents data={{contents: subContents}} />
     </>
   )
 }
