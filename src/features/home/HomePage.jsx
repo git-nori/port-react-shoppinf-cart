@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { fetchHomeContents } from './homeSlice'
 
 import MainView from './MainView'
-import MainContent from './MainContent'
+import SubContent from './SubContent'
 
 const HomePage = () => {
   const dispatch = useDispatch()
@@ -14,7 +14,7 @@ const HomePage = () => {
   return (
     <>
       <MainView imgUrl={mainContent.imgUrl} mainTxt={mainContent.mainTxt} subTxt={mainContent.subTxt} />
-      <MainContent imgUrl={subContent.imgUrl} mainTxt={subContent.mainTxt} subTxt={subContent.subTxt} />
+      <SubContent imgUrl={subContent.imgUrl} mainTxt={subContent.mainTxt} subTxt={subContent.subTxt} />
     </>
   )
 }
