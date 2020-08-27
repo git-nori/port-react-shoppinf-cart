@@ -5,7 +5,7 @@ import './MainContent.css'
 
 const MainView = ({data:{ imgUrl, mainTxt, subTxt }}) => {
   return (
-    <Container fluid className="vh-100">
+    <Container fluid className="vh-100 mt-3">
       <Jumbotron className="text-center background-img h-100" style={{ "backgroundImage": `url(${imgUrl})` }}>
         <h1>{mainTxt}</h1>
         <p>{subTxt}</p>

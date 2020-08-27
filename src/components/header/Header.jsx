@@ -13,7 +13,7 @@ const Header = () => {
   }
 
   return (
-    <Navbar bg="light" expand="md" fixed="top">
+    <Navbar bg="light" expand="lg" fixed="top" className="py-3">
       {showSearch ? (
         <Form className="w-100">
           <InputGroup>
@@ -26,15 +26,13 @@ const Header = () => {
       ) : (
           <>
             <Navbar.Brand as={Link} to="/">My Shopping Site</Navbar.Brand>
-            <Navbar.Text className="ml-auto">
-              <Nav className="outside-nav">
-                <Nav.Link className="ml-4" onClick={toggleSearch}><BsSearch /></Nav.Link>
-                <Nav.Link className="mx-4" as={Link} to="/cart"><BsBagFill /></Nav.Link>
-              </Nav>
-            </Navbar.Text>
+            <Nav className="flex-row out-link ml-auto">
+              <Nav.Link className="ml-3" onClick={toggleSearch}><BsSearch /></Nav.Link>
+              <Nav.Link className="mx-3" as={Link} to="/cart"><BsBagFill /></Nav.Link>
+            </Nav>
             <Navbar.Toggle aria-controls="toggle-nav" />
             <Navbar.Collapse id="toggle-nav">
-              <Nav className="ml-auto">
+              <Nav className="in-link">
                 <Nav.Link as={Link} to="/">Home</Nav.Link>
                 <Nav.Link as={Link} to="/catalog">Catalog</Nav.Link>
               </Nav>

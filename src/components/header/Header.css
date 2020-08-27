@@ -1,3 +1,15 @@
-.outside-nav {
-  flex-direction: row !important;
+@media (min-width: 992px) {
+  .in-link {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 992px) {
+  .out-link {
+    position: absolute;
+    left: 100%;
+    transform: translateX(-100%);
+  }
 }
