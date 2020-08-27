@@ -1,9 +1,9 @@
 import React from 'react'
 
 import { Jumbotron, Container } from 'react-bootstrap'
-import './MainView.css'
+import './MainContent.css'
 
-const MainView = ({ imgUrl, mainTxt, subTxt }) => {
+const MainView = ({data:{ imgUrl, mainTxt, subTxt }}) => {
   return (
     <Container fluid className="vh-100">
       <Jumbotron className="text-center background-img h-100" style={{ "backgroundImage": `url(${imgUrl})` }}>
