@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { fetchContents } from '../../services/home'
+import * as homeService from '../../services/home'
 
 const initialState = {
   mainContent: {},
@@ -28,7 +28,7 @@ const homeSlice = createSlice({
 })
 
 export const fetchHomeContents = (userId) => dispatch => {
-  fetchContents(userId)
+  homeService.fetchContents(userId)
     .then(res => {
       const {mainContent, subContent, subContents, collections} = res.data
       dispatch(setMainContent(mainContent))
