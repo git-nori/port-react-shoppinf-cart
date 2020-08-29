@@ -18,7 +18,10 @@ const ProductListPage = () => {
   const [pageNum, setPageNum] = useState(1) // 商品一覧の現在のページ数
   const limitNum = 8 // 商品一覧に表示する商品数
   const offset = limitNum * (pageNum - 1)
-  const filteredProducts = products.filter((product, i) => (offset <= i && i <= (limitNum-1) * pageNum))
+  const filteredProducts = products.filter((product, i) => (offset <= i && i <= (limitNum * pageNum - 1)))
+  const onClickPage = (value) => {
+    setPageNum(value)
+  }
 
   useEffect(() => {
     dispatch(fetchProducts(0))
@@ -30,6 +33,13 @@ const ProductListPage = () => {
       <ProductList data={{
         products: filteredProducts
       }} />
+      <Container className="mt-3">
+        <Row>
+          <Col>
+            <PaginationBar data={{ items: products, limitNum, pageNum }} actions={{ onClick: onClickPage }} classes={"justify-content-center"} />
+          </Col>
+        </Row>
+      </Container>
     </>
   )
 }
