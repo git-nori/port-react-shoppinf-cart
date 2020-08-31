@@ -5,7 +5,7 @@ const mainContent = {
 const subContent = {
   imgUrl, mainTxt: "テキスト付き画像", subTxt: "あなたが選んだ商品、コレクション、またはブログ記事に注目を集めるため、大きなテキストと画像を組み合わせます。可用性、スタイル、またはレビュー提供についての詳細を追加します。"
 }
-const subContents = [...Array(4).keys()].map(i => {
+const subContents = [...Array(3).keys()].map(i => {
   return {
     imgUrl, 
     mainTxt: "タイトルまたはキャッチコピーを追加する",

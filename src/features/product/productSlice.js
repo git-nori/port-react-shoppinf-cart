@@ -20,11 +20,10 @@ const productSlice = createSlice({
   }
 })
 
-export const fetchProducts = (userId) => dispatch => {
-  productService.fetchProducts(userId)
+export const fetchProducts = () => dispatch => {
+  productService.fetchProducts()
     .then(res => {
       console.log(res)
-      dispatch(setUserId(userId))
       dispatch(setProducts(res.data.products))
     })
     .catch(err => {
