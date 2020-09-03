@@ -40,5 +40,9 @@ export const compareFunc = (a, b, sortVal) => {
 }
 
 export const fetchProducts = (userId) => {
-  return client.get(`/products/${userId}`)
+  return client.get('/products')
+}
+
+export const fetchProduct = (productId) => {
+  return client.get(`/products/${productId}`)
 }

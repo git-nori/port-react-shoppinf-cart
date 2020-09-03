@@ -4,7 +4,8 @@ import * as productService from '../../services/product'
 
 const initialState = {
   userId: "",
-  products: [{}]
+  products: [{}],
+  product: {},
 }
 
 const productSlice = createSlice({
@@ -16,7 +17,10 @@ const productSlice = createSlice({
     },
     setProducts(state, action) {
       state.products = action.payload
-    }
+    },
+    setProduct(state, action) {
+      state.product = action.payload
+    },
   }
 })
 
@@ -31,9 +35,17 @@ export const fetchProducts = () => dispatch => {
     })
 }
 
+export const fetchProduct = (productId) => dispatch => {
+  productService.fetchProduct(productId)
+  .then(res => {
+    dispatch(setProduct(res.data.product))
+  })
+}
+
 export const {
   setUserId,
-  setProducts
+  setProducts,
+  setProduct,
 } = productSlice.actions
 
 export default productSlice.reducer
