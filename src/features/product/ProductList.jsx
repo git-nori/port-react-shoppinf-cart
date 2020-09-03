@@ -9,7 +9,7 @@ const ProductList = ({ data: { products } }) => {
       <Row>
         {products.map((product, i) => {
           return (
-            <Col as={Link} to="/" sm={6} lg={3} className="mt-3" key={Number(product.productId)}>
+            <Col as={Link} to={`/catalog/${product.productId}`} sm={6} lg={3} className="mt-3" key={Number(product.productId)}>
               <Card>
                 <Card.Img variant="top" src={product.imgUrl} />
                 <Card.Body>
