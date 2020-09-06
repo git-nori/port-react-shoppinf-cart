@@ -1,0 +1,10 @@
+.breadcrumb {
+  background-color: transparent !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.active {
+  color: black;
+  pointer-events: none;
+}
