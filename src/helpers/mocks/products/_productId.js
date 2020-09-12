@@ -13,6 +13,11 @@ const productsRes = [
 
 export default {
   get({ values }) {
-    return [200, productsRes.find(product => product.userId === loginUserId)]
+    const filteredProducts = productsRes.find(product => product.userId === loginUserId)
+    const product = filteredProducts.products.find(product => Number(product.productId) === values.productId)
+    return [200, {
+      userId: loginUserId,
+      product
+    }]
   },
 }
